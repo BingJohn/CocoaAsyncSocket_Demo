@@ -16,6 +16,13 @@ DEPENDENCIES:
   - MJExtension (= 3.0.13)
   - SDWebImage (= 4.0.0-beta2)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CocoaAsyncSocket
+    - FMDB
+    - MJExtension
+    - SDWebImage
+
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
@@ -24,4 +31,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d4210cf67a829ec4d6a12c1f1c3dfc92d479d944
 
-COCOAPODS: 1.2.1.beta.1
+COCOAPODS: 1.6.0

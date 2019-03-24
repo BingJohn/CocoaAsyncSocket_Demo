@@ -83,7 +83,6 @@
 		B99AB54421EF275800AF487D /* FSMStateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B99AB53621EF275800AF487D /* FSMStateUtil.m */; };
 		B99AB54521EF275800AF487D /* ReachStateWIFI.m in Sources */ = {isa = PBXBuildFile; fileRef = B99AB53721EF275800AF487D /* ReachStateWIFI.m */; };
 		B99AB54621EF275800AF487D /* RealReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B99AB53821EF275800AF487D /* RealReachability.m */; };
-		B99AB54721EF275800AF487D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B99AB53921EF275800AF487D /* Info.plist */; };
 		E1527204E4A6C66E20ABAB19 /* Pods_CocoaAsyncSocket_TCP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AA3076491D2596209CE424 /* Pods_CocoaAsyncSocket_TCP.framework */; };
 /* End PBXBuildFile section */
 
@@ -259,7 +258,6 @@
 		B99AB53621EF275800AF487D /* FSMStateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMStateUtil.m; sourceTree = "<group>"; };
 		B99AB53721EF275800AF487D /* ReachStateWIFI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachStateWIFI.m; sourceTree = "<group>"; };
 		B99AB53821EF275800AF487D /* RealReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealReachability.m; sourceTree = "<group>"; };
-		B99AB53921EF275800AF487D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -631,7 +629,6 @@
 				B99AB52321EF275800AF487D /* Connection */,
 				B99AB52621EF275800AF487D /* FSM */,
 				B99AB53821EF275800AF487D /* RealReachability.m */,
-				B99AB53921EF275800AF487D /* Info.plist */,
 			);
 			path = RealReachability;
 			sourceTree = "<group>";
@@ -710,7 +707,6 @@
 				B85F39B71EC9C95100B2EA9E /* Frameworks */,
 				B85F39B81EC9C95100B2EA9E /* Resources */,
 				468DE1FB243E1B7C1B4A95A5 /* [CP] Embed Pods Frameworks */,
-				B755D45009B8858E574A8906 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -768,6 +764,7 @@
 				TargetAttributes = {
 					B85F39B91EC9C95100B2EA9E = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = B7FKV4VX9P;
 						ProvisioningStyle = Automatic;
 					};
 					B85F39D21EC9C95100B2EA9E = {
@@ -815,7 +812,6 @@
 				B85F3A601EC9C9C600B2EA9E /* Tabbars.plist in Resources */,
 				B99AB53A21EF275800AF487D /* README.md in Resources */,
 				B862F5B51ECE7EB300B40BA1 /* ChatEmotions.plist in Resources */,
-				B99AB54721EF275800AF487D /* Info.plist in Resources */,
 				B85F39C81EC9C95100B2EA9E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -843,13 +839,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CocoaAsyncSocket_TCP/Pods-CocoaAsyncSocket_TCP-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CocoaAsyncSocket_TCP/Pods-CocoaAsyncSocket_TCP-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CocoaAsyncSocket_TCP/Pods-CocoaAsyncSocket_TCP-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		554D15741DBB99EB5F271785 /* [CP] Check Pods Manifest.lock */ = {
@@ -858,28 +863,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CocoaAsyncSocket_TCP-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B755D45009B8858E574A8906 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CocoaAsyncSocket_TCP/Pods-CocoaAsyncSocket_TCP-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1102,6 +1095,8 @@
 			baseConfigurationReference = 66DD7434C83D6F468099D4BF /* Pods-CocoaAsyncSocket_TCP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B7FKV4VX9P;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = CocoaAsyncSocket_TCP/Comon/PrefixHeader.pch;
 				INFOPLIST_FILE = CocoaAsyncSocket_TCP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1122,6 +1117,8 @@
 			baseConfigurationReference = 4AE7FCF3D1D9A8F040607338 /* Pods-CocoaAsyncSocket_TCP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B7FKV4VX9P;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = CocoaAsyncSocket_TCP/Comon/PrefixHeader.pch;
 				INFOPLIST_FILE = CocoaAsyncSocket_TCP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
